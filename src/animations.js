@@ -1,4 +1,4 @@
-// Intersection Observer для анимаций при скролле
+
 export function initScrollAnimations() {
   const observerOptions = {
     threshold: 0.1,
@@ -13,7 +13,7 @@ export function initScrollAnimations() {
     });
   }, observerOptions);
 
-  // Находим все элементы для анимации
+
   const animatedElements = document.querySelectorAll('.fade-in-on-scroll, .slide-in-left-on-scroll, .slide-in-right-on-scroll');
   
   animatedElements.forEach(el => {
@@ -21,7 +21,7 @@ export function initScrollAnimations() {
   });
 }
 
-// Анимация для параллакс эффекта звезд
+
 export function initParallaxStars() {
   window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
@@ -35,7 +35,6 @@ export function initParallaxStars() {
   });
 }
 
-// Анимация для плавающих элементов
 export function initFloatingElements() {
   const floatingElements = document.querySelectorAll('.floating');
   
@@ -45,7 +44,7 @@ export function initFloatingElements() {
   });
 }
 
-// Анимация для неонового свечения
+
 export function initNeonGlow() {
   const neonElements = document.querySelectorAll('.neon-glow');
   
@@ -55,7 +54,7 @@ export function initNeonGlow() {
   });
 }
 
-// Инициализация всех анимаций
+
 export function initAllAnimations() {
   initScrollAnimations();
   initParallaxStars();
