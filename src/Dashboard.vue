@@ -24,11 +24,26 @@
       <!-- Quick actions -->
       <section class="quick">
         <div class="qa" v-for="(card, i) in quickActions" :key="i" @click="card.action()">
-          <div class="qa-ico" :class="card.color">
-            <span v-if="card.key==='blank'">📄</span>
-            <span v-else-if="card.key==='audio'">🎙️</span>
-            <span v-else-if="card.key==='doc'">📥</span>
-            <span v-else>▶️</span>
+          <div class="qa-ico" :class="[card.color, card.key]">
+            <!-- Blank document -->
+            <svg v-if="card.key==='blank'" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM15 9V3.5L20.5 9H15z"/>
+            </svg>
+            <!-- Microphone -->
+            <svg v-else-if="card.key==='audio'" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 15a3 3 0 0 0 3-3V7a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3zm5-4v1a5 5 0 0 1-10 0v-1H5v1a7 7 0 0 0 6 6v3h2v-3a7 7 0 0 0 6-6v-1h-2z"/>
+            </svg>
+            <!-- Document upload (DOC tag) -->
+            <svg v-else-if="card.key==='doc'" viewBox="0 0 24 24" aria-hidden="true" class="doc-svg">
+              <rect x="3" y="4" width="18" height="16" rx="3" ry="3" opacity=".35"/>
+              <rect x="4.5" y="6" width="15" height="12" rx="2" ry="2" opacity=".55"/>
+              <rect x="6" y="8.5" width="12" height="7" rx="3.5" ry="3.5" class="pill"/>
+              <text x="12" y="13.4" text-anchor="middle" class="doc-text">DOC</text>
+            </svg>
+            <!-- YouTube -->
+            <svg v-else viewBox="0 0 24 24" aria-hidden="true" class="yt-svg">
+              <polygon points="10,8 16,12 10,16"/>
+            </svg>
           </div>
           <div class="qa-body">
             <div class="qa-title">{{ card.title }}</div>
@@ -135,11 +150,19 @@ export default {
 .quick { display:grid; grid-template-columns: repeat(4, minmax(200px, 1fr)); gap:16px; margin:18px 0 22px; }
 .qa { display:grid; grid-auto-flow:column; grid-template-columns:48px 1fr 16px; align-items:center; gap:14px; padding:16px; border-radius:14px; border:1px solid var(--line); background:rgba(255,255,255,.04); cursor:pointer; transition:transform .15s ease, box-shadow .15s ease; }
 .qa:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(0,0,0,.25), 0 0 0 1px rgba(0,212,255,.15) inset; }
-.qa-ico { width:48px; height:48px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:20px; box-shadow:0 0 0 1px rgba(255,255,255,.08) inset; }
+.qa-ico { width:48px; height:48px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:20px; box-shadow:0 0 0 1px rgba(255,255,255,.08) inset; color:#fff; }
 .c-purple { background: linear-gradient(135deg,#7c3aed33,#7c3aed22); }
 .c-violet { background: linear-gradient(135deg,#6d28d933,#6d28d922); }
 .c-blue   { background: linear-gradient(135deg,#00d4ff33,#00d4ff22); }
-.c-red    { background: linear-gradient(135deg,#ef444433,#ef444422); }
+.c-red    { background: #ff0000; }
+
+/* SVGs inside icons */
+.qa-ico svg { width:22px; height:22px; display:block; }
+.qa-ico path, .qa-ico polygon, .qa-ico rect { fill:#fff; }
+.qa-ico.doc .pill { fill: rgba(255,255,255,.2); }
+.qa-ico .doc-text { fill:#fff; font-weight:800; font-size:8.5px; font-family: ui-sans-serif, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; letter-spacing:.4px; dominant-baseline: middle; }
+.qa-ico.yt .yt-svg { filter: drop-shadow(0 0 0 rgba(0,0,0,0)); }
+
 .qa-title { font-weight:700; }
 .qa-desc  { color:var(--muted); font-size:12px; }
 .qa-arrow { color:var(--muted); font-size:22px; justify-self:end; }
