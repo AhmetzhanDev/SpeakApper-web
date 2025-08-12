@@ -42,7 +42,8 @@
             </svg>
             <!-- YouTube -->
             <svg v-else viewBox="0 0 24 24" aria-hidden="true" class="yt-svg">
-              <polygon points="10,8 16,12 10,16"/>
+              <rect x="2" y="5" width="20" height="14" rx="4" ry="4" fill="#FF0000"/>
+              <polygon points="10,9 15.5,12 10,15" fill="#FFFFFF"/>
             </svg>
           </div>
           <div class="qa-body">
@@ -154,11 +155,14 @@ export default {
 .c-purple { background: linear-gradient(135deg,#7c3aed33,#7c3aed22); }
 .c-violet { background: linear-gradient(135deg,#6d28d933,#6d28d922); }
 .c-blue   { background: linear-gradient(135deg,#00d4ff33,#00d4ff22); }
-.c-red    { background: #ff0000; }
+.c-red    { background: linear-gradient(135deg,#ef444433,#ef444422); }
 
 /* SVGs inside icons */
 .qa-ico svg { width:22px; height:22px; display:block; }
-.qa-ico path, .qa-ico polygon, .qa-ico rect { fill:#fff; }
+.qa-ico path { fill:#fff; }
+.qa-ico rect { fill:#fff; }
+.qa-ico.yt rect { fill:#FF0000; }
+.qa-ico.yt polygon { fill:#FFFFFF; }
 .qa-ico.doc .pill { fill: rgba(255,255,255,.2); }
 .qa-ico .doc-text { fill:#fff; font-weight:800; font-size:8.5px; font-family: ui-sans-serif, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; letter-spacing:.4px; dominant-baseline: middle; }
 .qa-ico.yt .yt-svg { filter: drop-shadow(0 0 0 rgba(0,0,0,0)); }
