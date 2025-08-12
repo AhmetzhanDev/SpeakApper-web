@@ -1,0 +1,21 @@
+{
+  "name": "speakapper",
+  "version": "1.0.0",
+  "description": "SpeakApper - Your smartest friend, right in your notes",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.3.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.2.3",
+    "vite": "^4.4.5"
+  },
+  "keywords": ["vue", "ai", "notes", "speakapper"],
+  "author": "SpeakApper Team",
+  "license": "MIT"
+} 
