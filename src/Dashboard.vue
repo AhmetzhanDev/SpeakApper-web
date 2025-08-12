@@ -35,10 +35,9 @@
             </svg>
             <!-- Document upload (DOC tag) -->
             <svg v-else-if="card.key==='doc'" viewBox="0 0 24 24" aria-hidden="true" class="doc-svg">
-              <rect x="3" y="4" width="18" height="16" rx="3" ry="3" opacity=".35"/>
-              <rect x="4.5" y="6" width="15" height="12" rx="2" ry="2" opacity=".55"/>
-              <rect x="6" y="8.5" width="12" height="7" rx="3.5" ry="3.5" class="pill"/>
-              <text x="12" y="13.4" text-anchor="middle" class="doc-text">DOC</text>
+              <rect class="doc-paper" x="4" y="3.5" width="16" height="17" rx="3" ry="3"/>
+              <polygon class="doc-fold" points="16,3.5 20,7.5 16,7.5"/>
+              <text x="12" y="15" text-anchor="middle" class="doc-text">DOC</text>
             </svg>
             <!-- YouTube -->
             <svg v-else viewBox="0 0 24 24" aria-hidden="true" class="yt-svg">
@@ -93,7 +92,7 @@ export default {
       quickActions: [
         { key: 'blank', title: 'Blank document', desc: 'Start from scratch', color: 'c-purple', action: () => this.createBlank() },
         { key: 'audio', title: 'Record or upload audio', desc: 'Upload an audio file', color: 'c-violet', action: () => this.uploadAudio() },
-        { key: 'doc',   title: 'Document upload', desc: 'Any PDF, DOC, PPT, etc', color: 'c-blue', action: () => this.uploadDoc() },
+        { key: 'doc',   title: 'Document upload', desc: 'Any PDF, DOC, PPT, etc', color: 'c-purple', action: () => this.uploadDoc() },
         { key: 'yt',    title: 'YouTube video', desc: 'Paste a YouTube link', color: 'c-red', action: () => this.addYoutube() },
       ],
       notes: [
@@ -159,12 +158,15 @@ export default {
 
 /* SVGs inside icons */
 .qa-ico svg { width:22px; height:22px; display:block; }
+.qa-ico.doc svg { width:28px; height:28px; }
 .qa-ico path { fill:#fff; }
 .qa-ico rect { fill:#fff; }
 .qa-ico.yt rect { fill:#FF0000; }
 .qa-ico.yt polygon { fill:#FFFFFF; }
+.qa-ico.doc .doc-paper { fill:#5b21b6; }
+.qa-ico.doc .doc-fold { fill:#8b5cf6; }
 .qa-ico.doc .pill { fill: rgba(255,255,255,.2); }
-.qa-ico .doc-text { fill:#fff; font-weight:800; font-size:8.5px; font-family: ui-sans-serif, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; letter-spacing:.4px; dominant-baseline: middle; }
+.qa-ico .doc-text { fill:#fff; font-weight:900; font-size:8.8px; font-family: ui-sans-serif, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; letter-spacing:.3px; dominant-baseline: middle; }
 .qa-ico.yt .yt-svg { filter: drop-shadow(0 0 0 rgba(0,0,0,0)); }
 
 .qa-title { font-weight:700; }
