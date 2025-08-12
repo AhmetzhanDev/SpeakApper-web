@@ -20,6 +20,26 @@
     <div class="parallax-star" style="top: 85%; left: 70%; animation-delay: 16s;"></div>
     <div class="parallax-star" style="top: 95%; left: 80%; animation-delay: 17s;"></div>
     
+    <!-- Additional Bright Stars -->
+    <div class="parallax-star" style="top: 12%; left: 25%; animation-delay: 0.5s;"></div>
+    <div class="parallax-star" style="top: 22%; left: 45%; animation-delay: 1.5s;"></div>
+    <div class="parallax-star" style="top: 32%; left: 65%; animation-delay: 2.5s;"></div>
+    <div class="parallax-star" style="top: 42%; left: 85%; animation-delay: 3.5s;"></div>
+    <div class="parallax-star" style="top: 52%; left: 15%; animation-delay: 4.5s;"></div>
+    <div class="parallax-star" style="top: 62%; left: 35%; animation-delay: 5.5s;"></div>
+    <div class="parallax-star" style="top: 72%; left: 55%; animation-delay: 6.5s;"></div>
+    <div class="parallax-star" style="top: 82%; left: 75%; animation-delay: 7.5s;"></div>
+    <div class="parallax-star" style="top: 92%; left: 95%; animation-delay: 8.5s;"></div>
+    <div class="parallax-star" style="top: 18%; left: 5%; animation-delay: 9.5s;"></div>
+    <div class="parallax-star" style="top: 28%; left: 25%; animation-delay: 10.5s;"></div>
+    <div class="parallax-star" style="top: 38%; left: 45%; animation-delay: 11.5s;"></div>
+    <div class="parallax-star" style="top: 48%; left: 65%; animation-delay: 12.5s;"></div>
+    <div class="parallax-star" style="top: 58%; left: 85%; animation-delay: 13.5s;"></div>
+    <div class="parallax-star" style="top: 68%; left: 15%; animation-delay: 14.5s;"></div>
+    <div class="parallax-star" style="top: 78%; left: 35%; animation-delay: 15.5s;"></div>
+    <div class="parallax-star" style="top: 88%; left: 55%; animation-delay: 16.5s;"></div>
+    <div class="parallax-star" style="top: 98%; left: 75%; animation-delay: 17.5s;"></div>
+    
     <!-- Header -->
     <header class="header">
       <div class="container">
